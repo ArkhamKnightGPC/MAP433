@@ -1,0 +1,70 @@
+\documentclass[french]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper]{geometry}
+\usepackage{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{tcolorbox}
+\usepackage{color}
+\usepackage{breqn}
+
+\begin{document}
+	\title{PC1: Modèles Statistiques}
+	\date{Dernière modification \today}
+	
+	\maketitle
+	
+	\subsection*{Exercice 1: Transformation de variables aléatoire}
+	
+	\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!75!black]
+		Soit un $n$-échantillon $(X_1, ..., X_n)$ du modèle statistique
+		\[\left( \mathbb{R}^k, \mathcal{B}(\mathbb{R}^k), \left\{p_\theta \cdot Leb^{\otimes k} : \theta \in \Theta \right\} \right).\]
+		On suppose qu'il existe un ouvert $\mathcal{O}$ de $\mathbb{R}^k$ tel que $\int_{\mathcal{O}} p_\theta dLeb^{\otimes k} = 1$ pour tout $\theta \in \Theta$.
+		Soit $\phi_\theta: \mathcal{O} \to \mathbb{R}^k$ une application continûement différentiable, injective sur $\mathcal{O}$ et dont le jacobien ne s'annule pas sur $\mathcal{O}$.
+	\end{tcolorbox}
+	
+	\begin{tcolorbox}[colback=gray!5!white,colframe=gray!75!black]
+	\textbf{1.} Sous $p_\theta \cdot Leb^{\otimes k}$, quelle est la loi de $\phi_\theta(X_i)$?
+	\end{tcolorbox}
+	
+	
+	\begin{tcolorbox}[colback=gray!5!white,colframe=gray!75!black]
+		\textbf{2.} On se place dans le cas $k=1$, $\theta = (a_1, b_1, ..., a_n, b_n)$ et $\Theta = (\mathbb{R} \times \mathbb{R}_*)^n$. Quel est le modèle statistique induit par $(a_1 + b_1X_1, ..., a_n + b_nX_n)$? Il est d'usage d'appeller $a_i$ le \textbf{paramètre de translation} et $b_i$ le \textbf{paramètre d'échelle}.
+	\end{tcolorbox}
+
+	\subsection*{Exercice 2: Modèle de translation et d'échelle}
+
+	\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!75!black]
+		Soit $g$ une densité par rapport à $Leb$. On considère le modèle statistique
+		\[\left(\mathbb{R}^k, \mathcal{B}(\mathbb{R}^k), \left\{p_{n,\theta} \cdot Leb^{\otimes n} : \theta \in \Theta = \mathbb{R} \times \mathbb{R}_+^*\right\}\right)\]
+		où
+		\[p_{n, \theta}(x_1,...,x_n) = \sigma^{-n} \prod_{k=1}^{n} g\left(\frac{x_k - \mu}{\sigma}\right), \quad \theta = (\mu, \sigma).\]
+		On note $(X_1, ..., X_n)$ les variables canoniques: pour tout $i \in \{1,...,n\}$ et $(x_1,...,x_n) \in \mathbb{R}^n$, on a $X_i(x_1,...,x_n) = x_i$.
+	\end{tcolorbox}
+	
+	\begin{tcolorbox}[colback=gray!5!white,colframe=gray!75!black]
+		\textbf{1.} Montrer que sous $p_{n, \theta} \cdot Leb^{\otimes n}$, les statistiques $(X_1,...,X_n)$ sont i.i.d. et identifier leur loi.
+	\end{tcolorbox}
+	
+	\begin{tcolorbox}[colback=gray!5!white,colframe=gray!75!black]
+		\textbf{2.} Soit $\theta = (\mu, \sigma) \in \Theta$. Montrer que sous $p_{n, \theta} \cdot Leb^{\otimes n}$, les variables aléatoires réelles
+		\[\frac{X_i - \mu}{\sigma}, \quad i \in \{1,...,n\}\]
+		sont i.i.d de loi de densité $g$ par rapport à $Leb$.
+	\end{tcolorbox}
+	
+	\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!75!black]
+		Supposons que $g$ est une densité gaussienne centrée réduite. On définit les statistiques
+		\[S_n = \sum_{i=1}^{n} X_i, \quad K_n = \sum_{k=1}^{n} (X_k - n^{-1}S_n)^2.\]
+	\end{tcolorbox}
+	
+	\begin{tcolorbox}[colback=gray!5!white,colframe=gray!75!black]
+		\textbf{3.} Proposer un estimateur de $\mu$ puis de $\sigma^2$.
+	\end{tcolorbox}
+	
+	\begin{tcolorbox}[colback=gray!5!white,colframe=gray!75!black]
+		\textbf{4.} Déterminer le modèle statistique induit par les statistiques $(S_n, K_n)$.
+	\end{tcolorbox}
+
+\end{document}
